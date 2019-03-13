@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Cinder 9999</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body style="background: #00ffff">
 
 <h1>Cinder 9999</h1>
 
-<img src="img/cinder.png" alt="Cinder the Green Dragon">
+<h2>Welcome to the Cinder site!</h2>
+
+<img src="img/cinder.png" alt="Cinder the Green Dragon" onclick="toggleSpin(this)">
+
+<img src="img/blue-cinder.png" alt="Saffire the Blue Dragon" onclick="toggleSpin(this)">
+
+<img src="img/black-cinder.png" alt="Anora the Black Dragon" onclick="toggleSpin(this)">
+
+<script language="JavaScript">
+    var classes = ["spin", "spin-turbo", "spin-slow", "spin-reverse", "spin-turbo-reverse", "spin-slow-reverse"];
+
+    function toggleSpin(element) {
+        if (element.className) {
+            element.className = "";
+        } else {
+            element.className = classes[Math.floor(Math.random() * classes.length)];
+        }
+    }
+</script>
 
 </body>
 </html>

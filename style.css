@@ -1,0 +1,59 @@
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-reverse {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+img.spin {
+    animation-name:            rotate;
+    animation-duration:        1.0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+img.spin-turbo {
+    animation-name:            rotate;
+    animation-duration:        0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+img.spin-slow {
+    animation-name:            rotate;
+    animation-duration:        3.0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+img.spin-reverse {
+    animation-name:            rotate-reverse;
+    animation-duration:        1.0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+img.spin-turbo-reverse {
+    animation-name:            rotate-reverse;
+    animation-duration:        0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+img.spin-slow-reverse {
+    animation-name:            rotate-reverse;
+    animation-duration:        3.0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
