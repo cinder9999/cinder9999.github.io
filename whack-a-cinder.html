@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cinder 9999</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>Cinder 9999</h1>
+
+<h2>Welcome to the Cinder site!</h2>
+
+<form action="index.html" method="get">
+    <input type="submit" value="Main Web Site Page"/>
+</form>
+
+<div style="cursor:url(img/hammer.png), auto;">
+    <img src="img/blue-cinder.png" alt="Saffire the Blue Dragon" id="movingCinder" onclick="alert('You got me!');">
+</div>
+
+<script language="JavaScript">
+    $(document).ready(function () {
+        var $cinder = $('#movingCinder');
+        var $document = $(document);
+
+        var documentWidth = $document.width();
+        var documentHeight = $document.height();
+
+        var maxCinderWidth = $cinder.width();
+        var maxCinderHeight = $cinder.height();
+
+        function moveCinder() {
+            var scale = Math.random();
+            var cinderWidth = maxCinderWidth * scale;
+            var cinderHeight = maxCinderHeight * scale;
+
+            var left = (documentWidth - cinderWidth) * Math.random();
+            var top = (documentHeight - cinderHeight) * Math.random();
+
+            $cinder.animate({
+                left: left,
+                top: top,
+                width: cinderWidth,
+                height: cinderHeight
+            }, 200 + (1000 * Math.random()), function () {
+                setTimeout(moveCinder, 400 * Math.random());
+            });
+        }
+
+        moveCinder();
+    });
+</script>
+
+</body>
+</html>

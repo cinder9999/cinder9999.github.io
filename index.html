@@ -5,17 +5,21 @@
     <title>Cinder 9999</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body style="background: #00ffff">
+<body>
 
 <h1>Cinder 9999</h1>
 
 <h2>Welcome to the Cinder site!</h2>
 
-<img src="img/cinder.png" alt="Cinder the Green Dragon" onclick="toggleSpin(this)">
+<form action="games.html" method="get">
+    <input type="submit" value="Turn to the Next Page"/>
+</form>
 
-<img src="img/blue-cinder.png" alt="Saffire the Blue Dragon" onclick="toggleSpin(this)">
-
-<img src="img/black-cinder.png" alt="Anora the Black Dragon" onclick="toggleSpin(this)">
+<p>
+    <img src="img/cinder.png" alt="Cinder the Green Dragon" onclick="toggleSpin(this)">
+    <img src="img/blue-cinder.png" alt="Saffire the Blue Dragon" onclick="toggleSpin(this)">
+    <img src="img/black-cinder.png" alt="Anora the Black Dragon" onclick="toggleSpin(this)">
+</p>
 
 <script language="JavaScript">
     var classes = ["spin", "spin-turbo", "spin-slow", "spin-reverse", "spin-turbo-reverse", "spin-slow-reverse"];
