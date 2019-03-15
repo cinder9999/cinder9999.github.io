@@ -5,28 +5,46 @@
     <title>Cinder 9999</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 </head>
 <body>
 
 <h1>Cinder 9999</h1>
 
-<h2>Welcome to the Cinder site!</h2>
+<h2>You're Inside the Cinder Site</h2>
 
-<form action="index.html" method="get">
-    <input type="submit" value="Main Web Site Page"/>
+<form action="games.html" method="get">
+    <input type="submit" value="Go Back to Game List"/>
 </form>
 
-<div style="cursor:url(img/hammer.png), auto;">
-    <img src="img/blue-cinder.png" alt="Saffire the Blue Dragon" id="movingCinder" onclick="alert('You got me!');">
+<div>
+    <img src="img/blue-cinder.png" alt="Saffire the Blue Dragon" id="movingCinder" class="hammerEnabled">
+</div>
+
+<div class="footer">
+    <p id="points" class="points"></p>
 </div>
 
 <script language="JavaScript">
     $(document).ready(function () {
-        var $cinder = $('#movingCinder');
         var $document = $(document);
+        var $cinder = $('#movingCinder');
+        var $points = $('#points');
+
+        var points = 0;
+
+        $points.text("0 POINTS");
+        $cinder.mousedown(function () {
+            points += 500;
+            $points.text(points + " POINTS");
+            $points.addClass("highlightPoints");
+            setTimeout(function () {
+                $points.removeClass("highlightPoints");
+            }, 2000);
+        });
 
         var documentWidth = $document.width();
-        var documentHeight = $document.height();
+        var documentHeight = $document.height() - $('#footer').width();
 
         var maxCinderWidth = $cinder.width();
         var maxCinderHeight = $cinder.height();

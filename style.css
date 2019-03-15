@@ -6,6 +6,37 @@ body {
     position: relative;
 }
 
+.hammerEnabled {
+    cursor: url(img/hammer.png), auto;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #660000;
+    color: white;
+    text-align: center;
+}
+
+.points {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.highlightPoints {
+    animation: blinker 0.4s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+        color: yellow;
+    }
+}
+
 @keyframes rotate {
     from {
         transform: rotate(0deg);
@@ -25,43 +56,43 @@ body {
 }
 
 img.spin {
-    animation-name:            rotate;
-    animation-duration:        1.0s;
+    animation-name: rotate;
+    animation-duration: 1.0s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
 
 img.spin-turbo {
-    animation-name:            rotate;
-    animation-duration:        0.5s;
+    animation-name: rotate;
+    animation-duration: 0.5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
 
 img.spin-slow {
-    animation-name:            rotate;
-    animation-duration:        3.0s;
+    animation-name: rotate;
+    animation-duration: 3.0s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
 
 img.spin-reverse {
-    animation-name:            rotate-reverse;
-    animation-duration:        1.0s;
+    animation-name: rotate-reverse;
+    animation-duration: 1.0s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
 
 img.spin-turbo-reverse {
-    animation-name:            rotate-reverse;
-    animation-duration:        0.5s;
+    animation-name: rotate-reverse;
+    animation-duration: 0.5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
 
 img.spin-slow-reverse {
-    animation-name:            rotate-reverse;
-    animation-duration:        3.0s;
+    animation-name: rotate-reverse;
+    animation-duration: 3.0s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
