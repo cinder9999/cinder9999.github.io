@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cinder 9999</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="header">
+    <h1>Cinder 9999</h1>
+
+    <h2>Cinder Button Tester</h2>
+
+    <form action="games.html" method="get">
+        <input type="submit" value="Go Back to Game List"/>
+    </form>
+</div>
+
+<div class="center"><button onclick="addBall()">Party Time</button></div>
+
+<script>
+    function startBalls() {
+        function nextBallMove() {
+            var $document = $(document);
+            var documentWidth = $document.width();
+            var documentHeight = $document.height();
+
+            var maxDiscoBallWidth = 480;
+            var maxDiscoBallHeight = 480;
+
+            $('.discoBall').each(function() {
+                var scale = Math.random();
+                var discoBallWidth = maxDiscoBallWidth * scale;
+                var discoBallHeight = maxDiscoBallHeight * scale;
+
+                var left = (documentWidth - discoBallWidth) * Math.random();
+                var top = (documentHeight - discoBallHeight) * Math.random();
+
+                $(this).animate({
+                    left: left,
+                    top: top,
+                    width: discoBallWidth,
+                    height: discoBallHeight
+                }, (1000 * Math.random()), function () {
+                    setTimeout(function() {}, 1000 * Math.random() + 200);
+                });
+            })
+
+            setTimeout(nextBallMove, 0);
+        }
+
+        nextBallMove();
+    }
+
+    $(document).ready(function () {
+        startBalls();
+    });
+
+    function addBall() {
+        var $document = $(document);
+        var left = $document.width() * Math.random();
+        var top = $document.height() * Math.random();
+
+        $('body').append('<div><img src="img/disco.gif" alt="Disco" class="discoBall" style="left: ' + left + '; top: ' + top + '; width: 0; height: 0"></div>')
+    }
+</script>
+
+</body>
+</html>

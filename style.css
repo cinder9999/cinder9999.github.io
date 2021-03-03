@@ -6,8 +6,20 @@ body {
     position: relative;
 }
 
+.discoBall {
+    position: absolute;
+}
+
 .hammerEnabled {
     cursor: url(img/hammer.png), auto;
+}
+
+.center {
+    position: page;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
 }
 
 .footer {
