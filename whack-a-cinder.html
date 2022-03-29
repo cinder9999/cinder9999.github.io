@@ -73,3 +73,27 @@
 
 </body>
 </html>
+<input onclick="toggleColor()" style="width:60px; height:50px;" type="button" value="<!!!"/>
+
+</form>
+
+
+</body>
+
+<script>
+    var blueBackgroundColor = '#22cdcd';
+    var greenBackgroundColor = '#26d726';
+    var hasGreenBackground = false
+
+    function toggleColor() {
+        if (hasGreenBackground) {
+            document.body.style.background = blueBackgroundColor
+            hasGreenBackground = false
+        } else {
+            document.body.style.background = greenBackgroundColor
+            hasGreenBackground = true
+        }
+    }
+</script>
+</html>
+ww

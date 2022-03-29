@@ -18,11 +18,29 @@
 <p></p>
 
 <form>
-    <input type="button" value="Whack-A-Cinder"  onclick="window.location.href = 'whack-a-cinder.html'"/>
+    <input type="button" value="Whack-A-Cinder" onclick="window.location.href = 'whack-a-cinder.html'"/>
 
-    <input type="button" value="Cinder Button Tester"  onclick="window.location.href = 'cinder-button-tester.html'"/>
+    <input type="button" value="Cinder Button Tester" onclick="window.location.href = 'cinder-button-tester.html'"/>
+
+    <input onclick="toggleColor()" type="button" value="color"/>
 </form>
 
 
 </body>
+
+<script>
+    var blueBackgroundColor = '#22cdcd';
+    var greenBackgroundColor = '#26d726';
+    var hasGreenBackground = false
+
+    function toggleColor() {
+        if (hasGreenBackground) {
+            document.body.style.background = blueBackgroundColor
+            hasGreenBackground = false
+        } else {
+            document.body.style.background = greenBackgroundColor
+            hasGreenBackground = true
+        }
+    }
+</script>
 </html>
